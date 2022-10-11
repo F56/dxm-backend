@@ -9,9 +9,9 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "build": "npx lint-staged && npx tsc",
+    "start": "npx lint-staged && node dist/server.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
