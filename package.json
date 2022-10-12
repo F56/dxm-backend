@@ -7,21 +7,22 @@
   "author": "DXM Alien Projects",
   "license": "MIT",
   "private": false,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "npx lint-staged && npx tsc",
     "start": "npx lint-staged && node dist/server.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
+    "dev": "npx lint-staged && ts-node-dev src/server.ts",
     "commit": "cz"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^18.8.4",
+    "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "commitizen": "^4.2.5",
-    "concurrently": "^7.4.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -35,12 +36,15 @@
     "lint-staged": "^13.0.3",
     "nodemon": "^2.0.20",
     "prettier": "2.7.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "winston": "^3.8.2"
   },
   "config": {
     "commitizen": {

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     // this will check Typescript files
     "**/*.(ts)": () => "yarn tsc --noEmit",
 
