@@ -11,7 +11,8 @@
   "scripts": {
     "build": "npx lint-staged && npx tsc",
     "start": "npx lint-staged && node dist/server.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
+    "commit": "cz"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -19,9 +20,11 @@
     "@types/node": "^18.8.4",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
+    "commitizen": "^4.2.5",
     "concurrently": "^7.4.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "8.2.0",
-    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
@@ -38,5 +41,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
